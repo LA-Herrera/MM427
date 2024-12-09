@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de Alimentos</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+        <script src="main.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <!--Agregar-->
+        <add class="add_p" id="popup" style="display: none;">
+            <div class="add_c" id="F">
+            </div>
+        </add>
+        <!--Eliminar-->
+        <delete class="add_p" id="d_popup" style="display: none;">
+            <div class="del_c">
+                <button class="add_cbtn" id="t">X</button>
+                <h2>Eliminar Producto</h2>
+                <p id="del_msg"></p>
+                <form class="del_f">
+                    <button type="submit" class="del_btn" id="delet">Eliminar</button>
+                </form>
+            </div>
+        </delete>
+        <!--Actualizar-->
+        <update class="add_p" id="u_popup" style="display: none;">
+            <div class="add_c" id="F-U">
+            </div>
+        </update>
+        <div class="pop_back" id="popup_error">
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg>
+                <p class="cookieHeading" id="warn">Advertencia</p>
+                <p class="cookieDescription" id="warn_msg">404</p>
+            
+                <div class="buttonContainer">
+                    <button class="acceptButton" onclick="togglePopUp()">Aceptar</button>
+                </div>
+            </div>            
+        </div>
+        <main class="main">
+            <header>
+                <h3 class="title">Gestor de Alimentos, Precios y Tiendas</h3>
+                <div class="hd">
+                    <ul>
+                        <li><button id="P">Productos</button></li>
+                        <li><button id="MV">Micronutrientes</button></li>
+                        <li><button id="PA">P-M</button></li>
+                        <li><button id="T">Tiendas</button></li>
+                        <li><button id="PR">Precios</button></li>
+                    </ul>
+                    <form class="ui-input-container" id="search">
+                      <input
+                        class="ui-input"
+                        type="text"
+                        id="query"
+                      >
+                      <div class="ui-input-underline"></div>
+                      <div class="ui-input-highlight"></div>
+                      <div class="ui-input-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="search_icon" onclick="E2()">
+                          <path
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </form>                
+                </div>
+            </header>
+            <div class="ci">
+                <table id="item-list" class="items"></table>
+            </div>
+        </main>
+    </body>
+</html>

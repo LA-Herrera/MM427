@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "javascript-lp-solver": "^0.4.13",
+    "path": "^0.12.7"
+  }
+}

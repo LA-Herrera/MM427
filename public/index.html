@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>El Problema de la Dieta</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <div class="pop_back" id="popup">
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                  </svg>
+                <p class="heading" id="warn">Advertencia</p>
+                <p class="description" id="warn_msg">404</p>
+            
+                <div class="buttonContainer">
+                    <button class="acceptButton" onclick="togglePopUp()">Aceptar</button>
+                </div>
+            </div>            
+        </div>
+        <div class="container">
+            <form id="formulario">
+            <h1>Dieta Personalizada</h1> 
+
+            <div class="input-section">
+                <label>Calorias (kcal):</label>
+                <div class="range-input">
+                    <input type="number" id="cal_l" placeholder="Min" step="0.01" value="2000" min="0">
+                    <input type="number" id="cal_u" placeholder="Max" step="0.01" value="2400">
+                </div>
+            </div>
+            
+            <div class="input-section">
+                <label>Grasas (g):</label>
+                <div class="range-input">
+                    <input type="number" id="grasa_l" placeholder="Min" step="0.01" value="44" min="0">
+                    <input type="number" id="grasa_u" placeholder="Max" step="0.01" value="78">
+                </div>
+            </div>
+        
+            <div class="input-section">
+                <label>Proteína (g):</label>
+                <div class="range-input">
+                    <input type="number" id="protein_l" placeholder="Min" step="0.01" value="45" min="0">
+                    <input type="number" id="protein_u" placeholder="Max" step="0.01" value="60">
+                </div>
+            </div>
+        
+            <div class="input-section">
+                <label>Carbohidratos (g):</label>
+                <div class="range-input">
+                    <input type="number" id="carbs_l" placeholder="Min" step="0.01" value="225" min="0">
+                    <input type="number" id="carbs_u" placeholder="Max" step="0.01" value="325">
+                </div>
+            </div>
+        
+            <div class="input-section">
+                <label>Sodio (mg):</label>
+                <div class="range-input">
+                    <input type="number" id="na_l" placeholder="Min" step="0.01" value="1500" min="0">
+                    <input type="number" id="na_u" placeholder="Max" step="0.01" value="2000">
+                </div>
+            </div>
+            <!-- Advanced -->
+            <div class="show-advanced" onclick="toggleAdvancedOptions()" id="adv_btn">
+                Más Opciones ⮟
+            </div>
+            
+            <div class="advanced-options" id="advancedOptions">
+                <label>Calcio (mg):</label>
+                <div class="range-input">
+                    <input type="number" id="calc_l" placeholder="Min" step="0.01" value="1000" min="0">
+                    <input type="number" id="calc_u" placeholder="Max" step="0.01" value="1300">
+                </div>
+                
+                <label>Hierro (mg):</label>
+                <div class="range-input">
+                    <input type="number" id="Fe_l" placeholder="Min" step="0.01" value="8" min="0">
+                    <input type="number" id="Fe_u" placeholder="Max" step="0.01" value="18">
+                </div>
+
+                <label>Vitamina A (μg):</label>
+                <div class="range-input">
+                    <input type="number" id="vitA_l" placeholder="Min" step="0.01" value="800" min="0">
+                    <input type="number" id="vitA_u" placeholder="Max" step="0.01" value="1000">
+                </div>
+
+                <label>Vitamina C (mg):</label>
+                <div class="range-input">
+                    <input type="number" id="vitC_l" placeholder="Min" step="0.01" value="75" min="0">
+                    <input type="number" id="vitC_u" placeholder="Max" step="0.01" value="90">
+                </div>
+
+                <label>Zinc (mg):</label>
+                <div class="range-input">
+                    <input type="number" id="zin_l" placeholder="Min" step="0.01" value="8" min="0">
+                    <input type="number" id="zin_u" placeholder="Max" step="0.01" value="11">
+                </div>
+            </div>
+            
+            <button class="btn">Generar Lista</button>
+            </form>
+            <div class="results-container" id="results">
+            </div>
+        </div>
+    </body>
+</html>
