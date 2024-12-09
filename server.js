@@ -7,7 +7,7 @@ const path = require('path');
 
 dotenv.config();
 
-const supabase = createClient(process.env.DATABASE_LINK, process.env.DATABASE_KEY);
+const supabase = createClient('https://rtwehfexeigemezvmedn.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0d2VoZmV4ZWlnZW1lenZtZWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg3NDk2MjUsImV4cCI6MjA0NDMyNTYyNX0.cYVaj4XqJosq26QgKMgpfdgdLebfqSucAavljElxOb4');
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
